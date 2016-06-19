@@ -1,5 +1,3 @@
 package com.distributedsolvers.data
 
-trait CurrentPartialAssignment {
-  
-}
+case class CurrentPartialAssignment(assignments: Array[Variable])

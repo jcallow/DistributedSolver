@@ -2,6 +2,10 @@ package com.distributedsolvers.data.domain
 
 trait DomainValue
 
+case object Unknown extends DomainValue
+
+case object Empty extends DomainValue
+
 abstract class NumericValue(value: Any) extends DomainValue
 
 case class IntegerValue(value: Int) extends NumericValue {

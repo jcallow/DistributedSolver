@@ -1,5 +1,5 @@
 <projectDescription>
-  <name>AsynchBT</name>
+  <name>DistributedSolver</name>
   <buildSpec>
     <buildCommand>
       <name>org.scala-ide.sdt.core.scalabuilder</name>
