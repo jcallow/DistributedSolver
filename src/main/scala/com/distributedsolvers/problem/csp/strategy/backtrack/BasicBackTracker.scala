@@ -4,9 +4,6 @@ import com.distributedsolvers.data.Problem
 import com.distributedsolvers.data.CurrentPartialAssignment
 import com.distributedsolvers.data.ConflictSet
 
-class BasicBackTracker(problem: Problem) extends Backtracker {
+class BasicBackTracker(problem: Problem) extends Backtracker(problem) {
   
-  def solve(cpa: CurrentPartialAssignment): ConflictSet = {
-    
-  }
 }

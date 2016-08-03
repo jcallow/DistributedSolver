@@ -16,9 +16,9 @@ class ABT(solver: Backtracker, agentMap: Array[Int], index: Int) extends Actor {
 
   val myRef: AgentRef = AgentRef(index, solver.assignable.map(v => v.index), this.context.self)
   
-  val lowerAgent: MutableMap[Int, AgentRef]
+  val lowerAgent: MutableMap[Int, AgentRef] = null
   
-  val higherAgents: MutableMap[Int, AgentRef]
+  val higherAgents: MutableMap[Int, AgentRef] = null
   
   
   def receive = {
@@ -42,7 +42,7 @@ class ABT(solver: Backtracker, agentMap: Array[Int], index: Int) extends Actor {
   
   def checkAgentView() {
     if (!solver.consistent) {
-      val conflict = solver.solve()
+      val conflict = solver.solve(null)
     
       conflict match {
         case Conflict(conflicts, variable) => {
@@ -61,13 +61,13 @@ class ABT(solver: Backtracker, agentMap: Array[Int], index: Int) extends Actor {
   }
   
   def resolveConflict(noGood: NoGood) {
-    if (solver.coherant(noGood.noGood, solver.currentView)) {
-      checkAddLink(noGood)
-      solver.addNoGood(noGood.noGood)
-      checkAgentView
-    } else if (solver.coherant(noGood.noGood, solver.assignable.map(v => v.index).toSet)) {
-      noGood.sender ! Ok(solver.getCPA, myRef.ref)
-    }
+//    if (solver.coherant(noGood.noGood, solver.currentView)) {
+//      checkAddLink(noGood)
+//      solver.addNoGood(noGood.noGood)
+//      checkAgentView
+//    } else if (solver.coherant(noGood.noGood, solver.assignable.map(v => v.index).toSet)) {
+//      noGood.sender ! Ok(solver.getCPA, myRef.ref)
+//    }
   }
   
   def backTrack(noGood: Conflict) {
@@ -91,9 +91,9 @@ class ABT(solver: Backtracker, agentMap: Array[Int], index: Int) extends Actor {
   }
   
   def checkAddLink(noGood: NoGood) = {
-    noGood.noGood.conflicts.assignments.foreach(v => {
-      if (lowerAgent.
-    }
+//    noGood.noGood.conflicts.assignments.foreach(v => {
+//      if (lowerAgent.
+//    }
   }
 
   def send(index: Int, message: Any) {

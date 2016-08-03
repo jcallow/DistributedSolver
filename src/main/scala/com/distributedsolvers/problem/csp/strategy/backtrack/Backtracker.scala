@@ -17,23 +17,25 @@ trait Generator {
   }
 }
 
-trait Backtracker {
+class Backtracker(problem: Problem) {
   
-  def view:Array[Variable]
-  def assignable: Array[Variable]
-  def generators: Map[Int, Generator]
-  def currentView: Set[Int]
+  def view:Array[Variable] = problem.network.variables
+  def assignable: Array[Variable] = problem.network.variables.filter(p => problem.assignList.contains(p.index))
+  def generators: Map[Int, Generator] = null
+  def currentView: Set[Variable] = assignable.toSet
   
   
-  def solve(): ConflictSet
+  def solve(cpa: CurrentPartialAssignment): ConflictSet = {
+    null
+  }
   
   def consistent(): Boolean = {
-    
+    false
   }
  
   def coherant(noGood: Conflict, variables: Set[Int]): Boolean = {
     noGood.conflicts.assignments.foreach( v => {
-      if (variables.contains(v)) {
+      if (variables.contains(v.index)) {
         if (v.assignment != view(v.index).assignment) return false
       }
     })
