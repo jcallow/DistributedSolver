@@ -1,5 +1,6 @@
 package com.distributedsolvers.problem.csp.strategy.backtrack
 
+import com.distributedsolvers.constraints.Constraint
 import com.distributedsolvers.data.ConflictSet
 import com.distributedsolvers.data.CurrentPartialAssignment
 import com.distributedsolvers.data.Problem
@@ -9,24 +10,16 @@ import com.distributedsolvers.data.domain.DomainValue
 
 import scala.collection.mutable.{Map => MutableMap}
 
-trait Generator {
-  def noGoods:MutableMap[CurrentPartialAssignment, DomainValue]
-  
-  def addNoGood(noGood: Conflict) {
-    noGoods.put(noGood.conflicts, noGood.variable.assignment)
-  }
-}
-
 class Backtracker(problem: Problem) {
   
-  def view:Array[Variable] = problem.network.variables
+ /* def view:Array[Variable] = problem.network.variables
   def assignable: Array[Variable] = problem.network.variables.filter(p => problem.assignList.contains(p.index))
   def generators: Map[Int, Generator] = null
   def currentView: Set[Variable] = assignable.toSet
   
   
   def solve(cpa: CurrentPartialAssignment): ConflictSet = {
-    null
+
   }
   
   def consistent(): Boolean = {
@@ -58,5 +51,5 @@ class Backtracker(problem: Problem) {
   
   def updateView(index: Int, value: DomainValue) {
     view(index).assignment = value
-  }
+  }*/
 }

@@ -1,6 +1,5 @@
 package com.distributedsolvers.problem.csp.solvers.distributed.asyncbacktracking
 
-import com.distributedsolvers.data.Problem
 import akka.actor.Actor
 import com.distributedsolvers.problem.csp.strategy.backtrack.Backtracker
 import com.distributedsolvers.problem.csp.solvers.distributed.asyncbacktracking.Messages._
@@ -8,11 +7,10 @@ import com.distributedsolvers.data.Conflict
 import com.distributedsolvers.data.NoConflict
 import com.distributedsolvers.data.AgentRef
 import scala.collection.mutable.{ Map => MutableMap }
-import akka.actor.ActorRef
-import com.distributedsolvers.data.CurrentPartialAssignment
+
 import com.distributedsolvers.data.domain.Unknown
 
-class ABT(solver: Backtracker, agentMap: Array[Int], index: Int) extends Actor {
+/*class ABT(solver: Backtracker, agentMap: Array[Int], index: Int) extends Actor {
 
   val myRef: AgentRef = AgentRef(index, solver.assignable.map(v => v.index), this.context.self)
   
@@ -71,7 +69,7 @@ class ABT(solver: Backtracker, agentMap: Array[Int], index: Int) extends Actor {
   }
   
   def backTrack(noGood: Conflict) {
-   
+
     if (noGood.conflicts.assignments.isEmpty) {
       stop
     } else {
@@ -103,4 +101,4 @@ class ABT(solver: Backtracker, agentMap: Array[Int], index: Int) extends Actor {
   def stop() {
     // no solution, stop
   }
-}
+}*/

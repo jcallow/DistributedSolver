@@ -4,7 +4,7 @@
 		module="distributedsolver_2.11"
 		revision="1.0"
 		status="integration"
-		publication="20160709142605"
+		publication="20160821175954"
 	>
 		<description>
 		DistributedSolver
@@ -37,6 +37,7 @@
 		<dependency org="com.typesafe.akka" name="akka-actor_2.11" rev="2.4.0" conf="compile->default(compile)"/>
 		<dependency org="com.typesafe.akka" name="akka-testkit_2.11" rev="2.4.0" conf="compile->default(compile)"/>
 		<dependency org="org.scalatest" name="scalatest_2.11" rev="2.2.4" conf="test->default(compile)"/>
+		<dependency org="org.scalamock" name="scalamock-scalatest-support_2.11" rev="3.2.2" conf="test->default(compile)"/>
 		<dependency org="ch.qos.logback" name="logback-classic" rev="1.1.7" conf="compile->default(compile)"/>
 	</dependencies>
 </ivy-module>

@@ -10,7 +10,7 @@ object Messages {
   
   case class Ok(cpa: CurrentPartialAssignment, sender: ActorRef) 
   
-  case class NoGood(noGood: Conflict, sender: ActorRef)
+  case class NoGood(noGood: ConflictSet, sender: ActorRef)
     
   case class Stop()
   

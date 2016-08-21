@@ -3,14 +3,14 @@ package com.distributedsolvers.problem.csp.strategy.backtrack
 import org.scalatest._
 import com.distributedsolvers.data._
 import com.distributedsolvers.data.domain._
-import com.distributedsolvers.constraints.NotEqual
 import com.distributedsolvers.constraints.Constraint
 
 
+/*
 class BasicBackTrackerTest extends FlatSpec {
   
   val problem = getSampleProblem()
-  val backtracker = new BackTracker(problem)
+  val backtracker = new Backtracker(problem)
   
   "Update View" should "Change the values of the different views" in {
     val variables = new Array[Variable](3)
@@ -49,4 +49,4 @@ class BasicBackTrackerTest extends FlatSpec {
     return problem
     
   }
-}
+}*/
